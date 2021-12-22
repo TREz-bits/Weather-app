@@ -1,0 +1,14 @@
+{
+  "name": "clima",
+  "version": "1.0.0",
+  "description": "app del clima",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Axel Muñoz",
+  "license": "ISC",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}
