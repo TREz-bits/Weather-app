@@ -9,6 +9,6 @@
   "author": "Axel Muñoz",
   "license": "ISC",
   "dependencies": {
-    "xmlhttprequest": "^1.8.0"
+    "xhr2": "^0.2.1"
   }
 }
