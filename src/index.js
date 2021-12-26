@@ -38,7 +38,7 @@ const Data = async (url_api) => {
         console.log(info);
 
         const titleZone = document.getElementById('head-title');
-        titleZone.innerHTML = `<h1>EL CLIMA DE HOY EN ${zone}</h1>`
+        titleZone.innerHTML = `<h1>El clima de hoy en ${zone}</h1>`
 
         const textWeather = document.getElementById('description');
         textWeather.innerHTML = `${weather_description}`
