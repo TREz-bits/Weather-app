@@ -34,14 +34,28 @@ const Data = async (url_api) => {
         const info = await fetchData(`${url_api}`);
         const temperatura = info.main.temp;
         const temperaturaCelsius = (temperatura - 273).toFixed(1);
+        const humidity = info.main.humidity;
         const weather = info.weather[0].icon;
         const weather_description = info.weather[0].description;
+        const zone = info.name + ', ' + info.sys.country;
+
+        console.log(info);
+
+        const titleZone = document.getElementById('head-title');
+        titleZone.innerHTML = `<h1>EL CLIMA DE HOY EN ${zone}</h1>`
 
         const textWeather = document.getElementById('description');
         textWeather.innerHTML = `${weather_description}`
 
         const textTemp = document.getElementById('temp');
-        textTemp.innerHTML = `${temperaturaCelsius}°`
+        if(temperaturaCelsius < 5) {textTemp.innerHTML = `${temperaturaCelsius}° C <i class="fas fa-thermometer-empty" style='color: #83489E></i>`} else
+        if(temperaturaCelsius < 15) {textTemp.innerHTML = `${temperaturaCelsius}° C <i class="fas fa-thermometer-quarter" style='color: #994079></i>`} else
+        if(temperaturaCelsius < 20) {textTemp.innerHTML = `${temperaturaCelsius}° C <i class="fas fa-thermometer-half" style='color: #A43C66></i>`} else
+        if(temperaturaCelsius < 25) {textTemp.innerHTML = `${temperaturaCelsius}° C <i class="fas fa-thermometer-three-quarters" style='color: #AF3853'></i>`} else
+        if(temperaturaCelsius < 30) {textTemp.innerHTML = `${temperaturaCelsius}° C <i class="fas fa-thermometer-full" style='color: #C5302E'></i>`}
+
+        const textHumidity = document.getElementById('humidity');
+        textHumidity.innerHTML = `${humidity}%  <i class="fas fa-tint"></i>`
 
         const image = document.getElementById('wt-img');
         image.innerHTML = `<img src="https://openweathermap.org/img/wn/${weather}@2x.png" alt="${weather_description}" srcset="">`

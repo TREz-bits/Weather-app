@@ -22,7 +22,7 @@ body {
 .header {
     text-align: center;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color: white;
 }
 
@@ -33,11 +33,25 @@ body {
 }
 
 #description {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     color: white;
+    padding-bottom: 1rem;
 }
 
 #temp {
-    font-size: 1.8rem;
+    font-weight: 900;
+    font-size: 3rem;
     color: white;
+}
+
+#humidity {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    padding-top: 0.8rem;
+}
+
+.fa-tint {
+    font-size: 3rem;
+    color: skyblue;
 }
