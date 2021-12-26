@@ -47,7 +47,7 @@ const Data = async (url_api) => {
         textTemp.innerHTML = `${temperaturaCelsius}°`
 
         const image = document.getElementById('wt-img');
-        image.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather}@2x.png" alt="${weather_description}" srcset="">`
+        image.innerHTML = `<img src="https://openweathermap.org/img/wn/${weather}@2x.png" alt="${weather_description}" srcset="">`
     // recibe el error si es que hay alguno
     } catch (error) {
         console.log(error);
