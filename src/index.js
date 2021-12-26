@@ -42,13 +42,9 @@ const Data = async (url_api) => {
         const textTemp = document.getElementById('temp');
         textTemp.innerHTML = `${temperaturaCelsius}°`
 
-        if (location.protocol === 'http:') {
-            const image = document.getElementById('wt-img');
-            image.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather}@2x.png" alt="${weather_description}" srcset="">`;
-        } else {
-            const image = document.getElementById('wt-img');
-            image.innerHTML = `<img src="https://openweathermap.org/img/wn/${weather}@2x.png" alt="${weather_description}" srcset="">`
-        }
+        const image = document.getElementById('wt-img');
+        image.innerHTML = `<img src="https://cors-anywhere.herokuapp.com/https://openweathermap.org/img/wn/${weather}@2x.png" alt="${weather_description}" srcset="">`
+
     // recibe el error si es que hay alguno
     } catch (error) {
         console.log(error);
