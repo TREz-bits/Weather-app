@@ -5,6 +5,7 @@ const ubication = (geolocation) => {
     let latitud = geolocation.coords.latitude;
     let longitud = geolocation.coords.longitude;
     const API = `https://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&appid=${keyapi}`;
+    console.log(API);
     Data(API)
 }
 navigator.geolocation.getCurrentPosition(ubication)
@@ -30,8 +31,19 @@ const Data = async (url_api) => {
         const info = await fetchData(`${url_api}`);
         const temperatura = info.main.temp;
         const temperaturaCelsius = (temperatura - 273).toFixed(1);
+        const weather = info.weather[0].icon;
+        const weather_description = info.weather[0].description;
+
+        console.log(info);
+
+        const textWeather = document.getElementById('description');
+        textWeather.innerHTML = `${weather_description}`
+
         const textTemp = document.getElementById('temp');
-        textTemp.innerHTML = `La temperatura de hoy es de ${temperaturaCelsius}°`
+        textTemp.innerHTML = `${temperaturaCelsius}°`
+
+        const image = document.getElementById('wt-img');
+        image.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather}@2x.png" alt="${weather_description}" srcset="">`
     // recibe el error si es que hay alguno
     } catch (error) {
         console.log(error);
